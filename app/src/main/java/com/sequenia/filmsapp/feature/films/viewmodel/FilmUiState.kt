@@ -1,7 +1,7 @@
-package com.sequenia.moviesapp.feature.films.viewmodel
+package com.sequenia.filmsapp.feature.films.viewmodel
 
-import com.sequenia.moviesapp.feature.films.data.Film
-import com.sequenia.moviesapp.util.Status
+import com.sequenia.filmsapp.feature.films.data.Film
+import com.sequenia.filmsapp.util.Status
 
 data class FilmUiState(
     val films: List<Film>? = null,

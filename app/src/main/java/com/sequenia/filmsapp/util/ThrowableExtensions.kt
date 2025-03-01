@@ -1,7 +1,7 @@
-package com.sequenia.moviesapp.util
+package com.sequenia.filmsapp.util
 
 import android.content.Context
-import com.sequenia.moviesapp.R
+import com.sequenia.filmsapp.R
 import okio.IOException
 
 fun Throwable.getErrorText(context: Context): String = when (this) {

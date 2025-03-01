@@ -1,6 +1,6 @@
-package com.sequenia.moviesapp.api
+package com.sequenia.filmsapp.api
 
-import com.sequenia.moviesapp.BuildConfig
+import com.sequenia.filmsapp.BuildConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import java.util.concurrent.TimeUnit

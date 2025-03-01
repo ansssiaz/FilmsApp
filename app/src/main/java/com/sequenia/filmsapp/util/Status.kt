@@ -1,4 +1,4 @@
-package com.sequenia.moviesapp.util
+package com.sequenia.filmsapp.util
 
 sealed interface Status {
     val throwableOrNull: Throwable?

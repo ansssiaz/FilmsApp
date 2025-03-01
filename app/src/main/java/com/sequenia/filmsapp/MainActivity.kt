@@ -1,4 +1,4 @@
-package com.sequenia.moviesapp
+package com.sequenia.filmsapp
 
 import androidx.appcompat.app.AppCompatActivity
 

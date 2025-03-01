@@ -1,14 +1,14 @@
-package com.sequenia.moviesapp.feature.films.viewmodel
+package com.sequenia.filmsapp.feature.films.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.sequenia.moviesapp.feature.films.data.Film
-import com.sequenia.moviesapp.feature.films.repository.FilmsRepository
+import com.sequenia.filmsapp.feature.films.data.Film
+import com.sequenia.filmsapp.feature.films.repository.FilmsRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import com.sequenia.moviesapp.util.Status
+import com.sequenia.filmsapp.util.Status
 
 class FilmViewModel(
     private val repository: FilmsRepository,

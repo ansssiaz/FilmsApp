@@ -1,4 +1,4 @@
-package com.sequenia.moviesapp.feature.films
+package com.sequenia.filmsapp.feature.films
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,14 +14,14 @@ import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.snackbar.Snackbar
-import com.sequenia.moviesapp.R
-import com.sequenia.moviesapp.databinding.FragmentFilmsBinding
-import com.sequenia.moviesapp.feature.films.adapter.FilmsAdapter
-import com.sequenia.moviesapp.feature.films.api.FilmsApi
-import com.sequenia.moviesapp.feature.films.data.Film
-import com.sequenia.moviesapp.feature.films.repository.NetworkFilmsRepository
-import com.sequenia.moviesapp.feature.films.viewmodel.FilmViewModel
-import com.sequenia.moviesapp.util.getErrorText
+import com.sequenia.filmsapp.R
+import com.sequenia.filmsapp.databinding.FragmentFilmsBinding
+import com.sequenia.filmsapp.feature.films.adapter.FilmsAdapter
+import com.sequenia.filmsapp.feature.films.api.FilmsApi
+import com.sequenia.filmsapp.feature.films.data.Film
+import com.sequenia.filmsapp.feature.films.repository.NetworkFilmsRepository
+import com.sequenia.filmsapp.feature.films.viewmodel.FilmViewModel
+import com.sequenia.filmsapp.util.getErrorText
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 

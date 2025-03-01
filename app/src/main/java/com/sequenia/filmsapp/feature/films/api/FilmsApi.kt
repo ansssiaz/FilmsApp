@@ -1,6 +1,6 @@
-package com.sequenia.moviesapp.feature.films.api
+package com.sequenia.filmsapp.feature.films.api
 
-import com.sequenia.moviesapp.api.RetrofitFactory
+import com.sequenia.filmsapp.api.RetrofitFactory
 import retrofit2.create
 import retrofit2.http.GET
 

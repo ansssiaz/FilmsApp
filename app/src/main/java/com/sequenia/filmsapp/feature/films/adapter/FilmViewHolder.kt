@@ -1,11 +1,11 @@
-package com.sequenia.moviesapp.feature.films.adapter
+package com.sequenia.filmsapp.feature.films.adapter
 
 import androidx.recyclerview.widget.RecyclerView
-import com.sequenia.moviesapp.databinding.CardFilmBinding
-import com.sequenia.moviesapp.feature.films.data.Film
+import com.sequenia.filmsapp.databinding.CardFilmBinding
+import com.sequenia.filmsapp.feature.films.data.Film
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.sequenia.moviesapp.R
+import com.sequenia.filmsapp.R
 
 class FilmViewHolder(private val binding: CardFilmBinding) : RecyclerView.ViewHolder(binding.root) {
     private val radius =

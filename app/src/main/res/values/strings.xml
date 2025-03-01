@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">MoviesApp</string>
+    <string name="app_name" translatable="false">FilmsApp</string>
     <string name="network_error">Network error</string>
     <string name="unknown_error">Unknown error</string>
     <string name="film_image">Film image</string>

@@ -1,10 +1,10 @@
-package com.sequenia.moviesapp.feature.films.adapter
+package com.sequenia.filmsapp.feature.films.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
-import com.sequenia.moviesapp.databinding.CardFilmBinding
-import com.sequenia.moviesapp.feature.films.data.Film
+import com.sequenia.filmsapp.databinding.CardFilmBinding
+import com.sequenia.filmsapp.feature.films.data.Film
 
 class FilmsAdapter(
     private val listener: FilmListener,

@@ -1,6 +1,6 @@
-package com.sequenia.moviesapp.feature.films.api
+package com.sequenia.filmsapp.feature.films.api
 
-import com.sequenia.moviesapp.feature.films.data.Film
+import com.sequenia.filmsapp.feature.films.data.Film
 import kotlinx.serialization.Serializable
 
 @Serializable

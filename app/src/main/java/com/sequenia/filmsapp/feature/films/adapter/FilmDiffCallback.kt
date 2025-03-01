@@ -1,7 +1,7 @@
-package com.sequenia.moviesapp.feature.films.adapter
+package com.sequenia.filmsapp.feature.films.adapter
 
 import androidx.recyclerview.widget.DiffUtil
-import com.sequenia.moviesapp.feature.films.data.Film
+import com.sequenia.filmsapp.feature.films.data.Film
 
 class FilmDiffCallback: DiffUtil.ItemCallback<Film>() {
     override fun areItemsTheSame(oldItem: Film, newItem: Film): Boolean = oldItem.id == newItem.id
