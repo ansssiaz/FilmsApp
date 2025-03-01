@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="network_error">Ошибка подключения сети</string>
+    <string name="unknown_error">Неизвестная ошибка</string>
+    <string name="film_image">Афиша</string>
+    <string name="title_films_list">Фильмы</string>
+    <string name="snackbar_action_text">Повторить</string>
+</resources>
