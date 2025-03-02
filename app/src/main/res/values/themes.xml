@@ -1,7 +1,6 @@
 <resources>
     <!-- Base application theme. -->
     <style name="Base.Theme.FilmsApp" parent="Theme.Material3.DayNight.NoActionBar">
-        
         <item name="colorPrimary">@color/blue</item>
         <item name="colorAccent">@color/blue</item>
         <item name="colorPrimaryDark">@color/blue</item>

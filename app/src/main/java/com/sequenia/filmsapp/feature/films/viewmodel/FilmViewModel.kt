@@ -71,4 +71,22 @@ class FilmViewModel(
         val uniqueGenres = mutableUniqueGenres.toMap()
         return uniqueGenres
     }
+
+    fun setSelectedGenre(id: Long?) {
+        _state.update { currentState ->
+            if (currentState.selectedGenreId == id) {
+                currentState.copy(selectedGenreId = null)
+            } else {
+                currentState.copy(selectedGenreId = id)
+            }
+        }
+    }
+
+    fun getFilteredFilms(): List<Film>? {
+        return _state.value.films?.let { films ->
+            _state.value.selectedGenreId?.let { selectedId ->
+                films.filter { film -> film.genres.any { it.id == selectedId } }
+            } ?: films
+        }
+    }
 }

@@ -8,6 +8,7 @@ data class FilmUiState(
     val films: List<Film>? = null,
     val status: Status = Status.Idle,
     val uniqueGenresList: List<Genre> = emptyList(),
+    val selectedGenreId: Long? = null,
 ) {
     val isEmptyLoading: Boolean = status == Status.Loading && films.isNullOrEmpty()
     val isError: Boolean

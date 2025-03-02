@@ -65,13 +65,11 @@ class FilmsFragment : Fragment() {
         val genresAdapter = GenresAdapter(
             object : GenresAdapter.GenreListener {
                 override fun onGenreClicked(genre: Genre) {
-                    val filteredFilms =
-                        viewModel.state.value.films?.filter { film -> genre.id in film.genres.map { it.id } }
-                    filmsAdapter.submitList(filteredFilms)
+                    viewModel.setSelectedGenre(genre.id)
                 }
 
                 override fun onGenreDeselected() {
-                    filmsAdapter.submitList(viewModel.state.value.films)
+                    viewModel.setSelectedGenre(null)
                 }
             }
         )
@@ -91,7 +89,6 @@ class FilmsFragment : Fragment() {
             )
         )
         binding.listOfFilms.adapter = filmsAdapter
-
 
         viewModel.state
             .flowWithLifecycle(viewLifecycleOwner.lifecycle)
@@ -125,12 +122,11 @@ class FilmsFragment : Fragment() {
                 binding.filmsTitle.isVisible = !it.isEmptyLoading && !it.isError
 
                 genresAdapter.submitList(it.uniqueGenresList)
-                filmsAdapter.submitList(it.films)
+                genresAdapter.updateSelectedGenreId(it.selectedGenreId)
+                filmsAdapter.submitList(viewModel.getFilteredFilms())
             }
             .launchIn(viewLifecycleOwner.lifecycleScope)
 
         return binding.root
     }
-
-
 }

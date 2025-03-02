@@ -9,9 +9,8 @@ import com.sequenia.filmsapp.feature.genres.data.Genre
 
 class GenresAdapter(
     private val listener: GenreListener,
-) : ListAdapter<Genre, GenreViewHolder>(GenreDiffCallback()) {
-
     private var selectedGenreId: Long? = null
+) : ListAdapter<Genre, GenreViewHolder>(GenreDiffCallback()) {
 
     interface GenreListener {
         fun onGenreClicked(genre: Genre)
@@ -38,5 +37,11 @@ class GenresAdapter(
             }
             notifyDataSetChanged()
         }
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateSelectedGenreId(newSelectedGenreId: Long?) {
+        selectedGenreId = newSelectedGenreId
+        notifyDataSetChanged()
     }
 }
