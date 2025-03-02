@@ -13,11 +13,17 @@ class FilmViewHolder(private val binding: CardFilmBinding) : RecyclerView.ViewHo
 
     fun bind(film: Film) {
         binding.filmName.text = film.localizedName
-
-        Glide.with(binding.root)
-            .load(film.imageUrl)
-            .transform(RoundedCorners(radius))
-            .placeholder(R.drawable.empty_film_image)
-            .into(binding.filmImage)
+        if (film.imageUrl.isNullOrEmpty()) {
+            Glide.with(binding.root)
+                .load(R.drawable.empty_film_image)
+                .into(binding.filmImage)
+        } else {
+            Glide.with(binding.root)
+                .load(film.imageUrl)
+                .transform(RoundedCorners(radius))
+                .placeholder(R.drawable.empty_film_image)
+                .error(R.drawable.empty_film_image)
+                .into(binding.filmImage)
+        }
     }
 }

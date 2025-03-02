@@ -5,4 +5,5 @@
     <string name="film_image">Афиша</string>
     <string name="title_films_list">Фильмы</string>
     <string name="snackbar_action_text">Повторить</string>
+    <string name="title_genres_list">Жанры</string>
 </resources>
