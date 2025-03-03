@@ -6,4 +6,6 @@
     <string name="title_films_list">Films</string>
     <string name="snackbar_action_text">Repeat</string>
     <string name="title_genres_list">Genres</string>
+    <string name="year_suffix">year</string>
+    <string name="kinopoisk">KinoPoisk</string>
 </resources>

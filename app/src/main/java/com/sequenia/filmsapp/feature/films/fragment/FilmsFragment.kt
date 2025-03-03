@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.getColor
+import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -12,11 +13,13 @@ import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.sequenia.filmsapp.R
 import com.sequenia.filmsapp.databinding.FragmentFilmsBinding
+import com.sequenia.filmsapp.feature.filmcard.fragment.FilmCardFragment
 import com.sequenia.filmsapp.feature.films.itemdecoration.OffsetDecoration
 import com.sequenia.filmsapp.feature.films.adapter.FilmsAdapter
 import com.sequenia.filmsapp.feature.films.api.FilmsApi
@@ -51,13 +54,7 @@ class FilmsFragment : Fragment() {
         val filmsAdapter = FilmsAdapter(
             object : FilmsAdapter.FilmListener {
                 override fun onFilmImageClicked(film: Film) {
-                    /*findNavController().navigate(
-                        R.id.action_filmsFragment_to_FilmInformationFragment,
-                        bundleOf(
-                            FilmInformationFragment.ARG_FILM_ID to film.id,
-                            ...
-                        )
-                    )*/
+                    navigateToFilmCard(film)
                 }
             }
         )
@@ -128,5 +125,28 @@ class FilmsFragment : Fragment() {
             .launchIn(viewLifecycleOwner.lifecycleScope)
 
         return binding.root
+    }
+
+    private fun navigateToFilmCard(film: Film) {
+        val filmInformation = createFilmInformationString(film)
+        findNavController().navigate(
+            R.id.action_filmsFragment_to_filmCardFragment,
+            bundleOf(
+                FilmCardFragment.ARG_IMAGE to film.imageUrl,
+                FilmCardFragment.ARG_NAME to film.localizedName,
+                FilmCardFragment.ARG_INFORMATION to filmInformation,
+                FilmCardFragment.ARG_RATING to film.rating,
+                FilmCardFragment.ARG_DESCRIPTION to film.description
+            )
+        )
+    }
+
+    private fun createFilmInformationString(film: Film): String {
+        val genresString = if (film.genres.isNotEmpty()) {
+            film.genres.joinToString(", ") { it.name } + ", "
+        } else {
+            ""
+        }
+        return "$genresString${film.year} ${getString(R.string.year_suffix)}"
     }
 }

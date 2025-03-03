@@ -7,8 +7,8 @@ data class Film(
     val localizedName: String = "",
     val name: String = "",
     val year: Int = 0,
-    val rating: Double? = 0.0,
-    val imageUrl: String? = "",
+    val rating: Double? = null,
+    val imageUrl: String? = null,
     val description: String? = "",
     val genres: List<Genre> = emptyList(),
 )

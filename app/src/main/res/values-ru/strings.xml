@@ -6,4 +6,6 @@
     <string name="title_films_list">Фильмы</string>
     <string name="snackbar_action_text">Повторить</string>
     <string name="title_genres_list">Жанры</string>
+    <string name="year_suffix">год</string>
+    <string name="kinopoisk">КиноПоиск</string>
 </resources>

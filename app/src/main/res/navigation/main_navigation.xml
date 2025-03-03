@@ -7,5 +7,13 @@
     <fragment
         android:id="@+id/filmsFragment"
         android:name="com.sequenia.filmsapp.feature.films.fragment.FilmsFragment"
-        android:label="FilmsFragment" />
+        android:label="FilmsFragment" >
+        <action
+            android:id="@+id/action_filmsFragment_to_filmCardFragment"
+            app:destination="@id/filmCardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/filmCardFragment"
+        android:name="com.sequenia.filmsapp.feature.filmcard.fragment.FilmCardFragment"
+        android:label="FilmCardFragment" />
 </navigation>

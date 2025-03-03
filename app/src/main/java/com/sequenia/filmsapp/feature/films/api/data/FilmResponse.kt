@@ -13,9 +13,9 @@ data class FilmResponse(
     val localizedName: String = "",
     val name: String = "",
     val year: Int = 0,
-    val rating: Double? = 0.0,
+    val rating: Double? = null,
     @SerialName("image_url")
-    val imageUrl: String? = "",
+    val imageUrl: String? = null,
     val description: String? = "",
     val genres: List<String> = emptyList(),
 )
