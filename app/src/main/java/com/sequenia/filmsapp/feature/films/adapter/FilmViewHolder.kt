@@ -11,6 +11,11 @@ class FilmViewHolder(private val binding: CardFilmBinding) : RecyclerView.ViewHo
     private val radius =
         this.itemView.context.resources.getDimensionPixelSize(R.dimen.corner_radius)
 
+    /**
+     * Функция используется для установки названия фильма и афиши.
+     * Если у фильма нет афиши или произошла ошибка при загрузке изображения, то устанавливается изображение по умолчанию.
+     * @param film - объект типа Film
+     */
     fun bind(film: Film) {
         binding.filmName.text = film.localizedName
         if (film.imageUrl.isNullOrEmpty()) {

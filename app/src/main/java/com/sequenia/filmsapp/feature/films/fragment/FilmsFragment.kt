@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.sequenia.filmsapp.R
 import com.sequenia.filmsapp.databinding.FragmentFilmsBinding
-import com.sequenia.filmsapp.feature.films.OffsetDecoration
+import com.sequenia.filmsapp.feature.films.itemdecoration.OffsetDecoration
 import com.sequenia.filmsapp.feature.films.adapter.FilmsAdapter
 import com.sequenia.filmsapp.feature.films.api.FilmsApi
 import com.sequenia.filmsapp.feature.films.data.Film

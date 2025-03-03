@@ -23,6 +23,14 @@ class GenresAdapter(
         return GenreViewHolder(binding)
     }
 
+    /**
+     * Функция используется для связи объекта Genre из списка с ViewHolder.
+     * При этом проверяет, выбран ли текущий жанр и обновляет отображение.
+     * Если жанр уже выбран, она снимает выбор, если выбран новый жанр,
+     * она обновляет переменную selectedGenreId, а также уведомляет слушателя о клике.
+     * @param holder - объект GenreViewHolder
+     * @param position - индекс жанра в списке
+     */
     @SuppressLint("NotifyDataSetChanged")
     override fun onBindViewHolder(holder: GenreViewHolder, position: Int) {
         val genre = getItem(position)
@@ -39,6 +47,10 @@ class GenresAdapter(
         }
     }
 
+    /**
+     * Функция обновляет переменную selectedGenreId на id нового выбранного жанра, полученный из интерфейса.
+     * @param newSelectedGenreId - id нового жанра
+     */
     @SuppressLint("NotifyDataSetChanged")
     fun updateSelectedGenreId(newSelectedGenreId: Long?) {
         selectedGenreId = newSelectedGenreId

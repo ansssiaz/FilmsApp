@@ -55,6 +55,11 @@ class FilmViewModel(
         }
     }
 
+    /**
+     * Функция проверяет жанры каждого фильма и формирует Map,
+     * который содержит пары из уникального названия жанра и объект типа Genre с id и данным названием.
+     * @param films - список объектов Film
+     */
     private fun getAllUniqueGenres(films: List<Film>): Map<String, Genre> {
         val mutableUniqueGenres = mutableMapOf<String, Genre>()
         var genreIdCounter = 0L

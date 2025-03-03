@@ -1,10 +1,17 @@
-package com.sequenia.filmsapp.feature.films
+package com.sequenia.filmsapp.feature.films.itemdecoration
 
 import android.graphics.Rect
 import android.view.View
 import androidx.annotation.Px
 import androidx.recyclerview.widget.RecyclerView
 
+/**
+ * Класс используется для настройки отступов между карточками фильмов в RecyclerView,
+ * обеспечивая правильное выравнивание элементов в зависимости от их позиции.
+ * @param spacingSide - расстояние от карточки до края экрана
+ * @param spacingBottom - расстояние между рядами карточек
+ * @param spacingBetweenCards - расстояние между карточками в каждом ряду
+ */
 class OffsetDecoration(
     @Px private val spacingSide: Int,
     @Px private val spacingBottom: Int,
