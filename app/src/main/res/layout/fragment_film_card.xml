@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/film_card_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="H,160:222"
+            android:layout_marginTop="104dp"
+            android:layout_marginStart="114dp"
+            android:layout_marginEnd="114dp"
+            android:contentDescription="@string/film_image"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/empty_film_image"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/film_card_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/roboto_bold"
+            android:letterSpacing="0.01"
+            android:lineHeight="32sp"
+            android:textFontWeight="700"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/film_card_image"
+            tools:targetApi="p"
+            tools:text="Между нами горы" />
+
+        <TextView
+            android:id="@+id/film_information"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/roboto"
+            android:letterSpacing="0.01"
+            android:lineHeight="20sp"
+            android:textColor="@color/gray"
+            android:textFontWeight="400"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/film_card_name"
+            tools:targetApi="p"
+            tools:text="драма, 2017 год" />
+
+        <TextView
+            android:id="@+id/film_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/roboto_bold"
+            android:letterSpacing="0.01"
+            android:lineHeight="28sp"
+            android:textColor="@color/blue"
+            android:textFontWeight="400"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/film_information"
+            tools:targetApi="p"
+            tools:text="6.7" />
+
+        <TextView
+            android:id="@+id/kinopoisk_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="3dp"
+            android:fontFamily="@font/roboto"
+            android:letterSpacing="0.01"
+            android:lineHeight="16sp"
+            android:text="@string/kinopoisk"
+            android:textColor="@color/blue"
+            android:textFontWeight="500"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/film_rating"
+            app:layout_constraintStart_toEndOf="@id/film_rating"
+            app:layout_constraintTop_toTopOf="@id/film_rating"
+            tools:targetApi="p" />
+
+        <TextView
+            android:id="@+id/film_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/roboto"
+            android:letterSpacing="0.01"
+            android:lineHeight="20sp"
+            android:textFontWeight="400"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/film_rating"
+            tools:ignore="VisualLintLongText"
+            tools:targetApi="p"
+            tools:text="Бен и Алекс, уцелевшие после авиакатастрофы, должны найти общий язык, чтобы выжить в экстремальных условиях далеких заснеженных гор. Когда они понимают, что на помощь к ним никто не придет, они вынуждены отправиться в опасный путь длиной в сотни километров. В заснеженных американских горах им придётся проходить через все ужасы выживания: серьёзные травмы, невозможность связаться с внешним миром, нападение диких животных. В борьбе за жизнь между двумя еще вчера незнакомыми людьми неожиданно возникает притяжение." />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
