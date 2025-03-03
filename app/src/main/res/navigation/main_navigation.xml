@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/filmsFragment"
-        android:name="com.sequenia.filmsapp.feature.films.FilmsFragment"
+        android:name="com.sequenia.filmsapp.feature.films.fragment.FilmsFragment"
         android:label="FilmsFragment" />
 </navigation>
