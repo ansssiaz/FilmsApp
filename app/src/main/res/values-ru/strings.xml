@@ -8,4 +8,5 @@
     <string name="title_genres_list">Жанры</string>
     <string name="year_suffix">год</string>
     <string name="kinopoisk">КиноПоиск</string>
+    <string name="films_title">Фильмы</string>
 </resources>

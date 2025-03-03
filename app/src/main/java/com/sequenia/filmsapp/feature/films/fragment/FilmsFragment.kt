@@ -8,6 +8,7 @@ import androidx.core.content.ContextCompat.getColor
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
@@ -29,16 +30,21 @@ import com.sequenia.filmsapp.feature.films.viewmodel.FilmMapper
 import com.sequenia.filmsapp.feature.films.viewmodel.FilmViewModel
 import com.sequenia.filmsapp.feature.genres.adapter.GenresAdapter
 import com.sequenia.filmsapp.feature.genres.data.Genre
+import com.sequenia.filmsapp.feature.toolbar.viewmodel.ToolbarViewModel
 import com.sequenia.filmsapp.util.getErrorText
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
 class FilmsFragment : Fragment() {
+    private val toolbarViewModel by activityViewModels<ToolbarViewModel>()
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
+        toolbarViewModel.setTitle(resources.getString(R.string.films_title))
+
         val binding = FragmentFilmsBinding.inflate(inflater, container, false)
 
         var snackbar: Snackbar? = null
@@ -132,8 +138,9 @@ class FilmsFragment : Fragment() {
         findNavController().navigate(
             R.id.action_filmsFragment_to_filmCardFragment,
             bundleOf(
+                FilmCardFragment.ARG_NAME to film.name,
                 FilmCardFragment.ARG_IMAGE to film.imageUrl,
-                FilmCardFragment.ARG_NAME to film.localizedName,
+                FilmCardFragment.ARG_LOCALIZED_NAME to film.localizedName,
                 FilmCardFragment.ARG_INFORMATION to filmInformation,
                 FilmCardFragment.ARG_RATING to film.rating,
                 FilmCardFragment.ARG_DESCRIPTION to film.description
