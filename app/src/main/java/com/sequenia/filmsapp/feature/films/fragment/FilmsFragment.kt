@@ -8,12 +8,8 @@ import androidx.core.content.ContextCompat.getColor
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.viewmodel.initializer
-import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,12 +17,9 @@ import com.google.android.material.snackbar.Snackbar
 import com.sequenia.filmsapp.R
 import com.sequenia.filmsapp.databinding.FragmentFilmsBinding
 import com.sequenia.filmsapp.feature.filmcard.fragment.FilmCardFragment
-import com.sequenia.filmsapp.feature.films.itemdecoration.OffsetDecoration
 import com.sequenia.filmsapp.feature.films.adapter.FilmsAdapter
-import com.sequenia.filmsapp.feature.films.api.FilmsApi
 import com.sequenia.filmsapp.feature.films.data.Film
-import com.sequenia.filmsapp.feature.films.repository.NetworkFilmsRepository
-import com.sequenia.filmsapp.feature.films.viewmodel.FilmMapper
+import com.sequenia.filmsapp.feature.films.itemdecoration.OffsetDecoration
 import com.sequenia.filmsapp.feature.films.viewmodel.FilmViewModel
 import com.sequenia.filmsapp.feature.genres.adapter.GenresAdapter
 import com.sequenia.filmsapp.feature.genres.data.Genre
@@ -34,9 +27,11 @@ import com.sequenia.filmsapp.feature.toolbar.viewmodel.ToolbarViewModel
 import com.sequenia.filmsapp.util.getErrorText
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import org.koin.androidx.viewmodel.ext.android.activityViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FilmsFragment : Fragment() {
-    private val toolbarViewModel by activityViewModels<ToolbarViewModel>()
+    private val toolbarViewModel by activityViewModel<ToolbarViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -49,13 +44,7 @@ class FilmsFragment : Fragment() {
 
         var snackbar: Snackbar? = null
 
-        val viewModel by viewModels<FilmViewModel> {
-            viewModelFactory {
-                initializer {
-                    FilmViewModel(NetworkFilmsRepository(FilmsApi.INSTANCE), FilmMapper())
-                }
-            }
-        }
+        val viewModel: FilmViewModel by viewModel<FilmViewModel>()
 
         val filmsAdapter = FilmsAdapter(
             object : FilmsAdapter.FilmListener {

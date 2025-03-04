@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    kotlin("plugin.serialization") version "2.1.10"
-    id("com.google.devtools.ksp")
+    alias(libs.plugins.serialization)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -64,4 +64,5 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
     implementation(libs.arrow.core)
     implementation(libs.glide)
+    implementation (libs.koin.android)
 }

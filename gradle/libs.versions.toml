@@ -3,6 +3,7 @@ activityKtx = "1.10.1"
 agp = "8.8.2"
 arrowCore = "2.0.1"
 desugar_jdk_libs = "2.1.5"
+koinAndroid = "4.0.2"
 kotlinxCoroutinesTest = "1.7.3"
 kotlinxSerializationJson = "1.6.3"
 lifecycleVersion = "2.8.7"
@@ -11,7 +12,8 @@ okhttpBom = "4.12.0"
 retrofit = "2.9.0"
 glide = "4.16.0"
 retrofit2KotlinxSerializationConverter = "1.0.0"
-kotlin = "2.1.0"
+kotlin = "2.1.10"
+ksp = "2.1.10-1.0.31"
 coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -28,6 +30,7 @@ junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinAndroid" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
@@ -49,4 +52,6 @@ kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serializa
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 

@@ -3,6 +3,7 @@ package com.sequenia.filmsapp.feature.films.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.sequenia.filmsapp.feature.films.api.data.FilmResponse
+import com.sequenia.filmsapp.feature.films.api.data.mapToFilm
 import com.sequenia.filmsapp.feature.films.data.Film
 import com.sequenia.filmsapp.feature.films.repository.FilmsRepository
 import com.sequenia.filmsapp.feature.genres.data.Genre
@@ -14,7 +15,6 @@ import com.sequenia.filmsapp.util.Status
 
 class FilmViewModel(
     private val repository: FilmsRepository,
-    private val mapper: FilmMapper,
 ) : ViewModel() {
     private val _state = MutableStateFlow(FilmUiState())
     val state = _state.asStateFlow()
@@ -28,7 +28,7 @@ class FilmViewModel(
         viewModelScope.launch {
             try {
                 val filmResponses: List<FilmResponse> = repository.getFilmsInformation()
-                val films = filmResponses.map(mapper::map)
+                val films = filmResponses.map { it.mapToFilm() }
 
                 val uniqueGenres = getAllUniqueGenres(films)
 
