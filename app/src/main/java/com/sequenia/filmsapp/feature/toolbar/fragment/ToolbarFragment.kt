@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.getDrawable
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.sequenia.filmsapp.R
@@ -15,6 +14,7 @@ import com.sequenia.filmsapp.databinding.FragmentToolbarBinding
 import com.sequenia.filmsapp.feature.toolbar.viewmodel.ToolbarViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 class ToolbarFragment : Fragment() {
     override fun onAttach(context: Context) {
@@ -45,7 +45,7 @@ class ToolbarFragment : Fragment() {
             }
         }
 
-        val toolbarViewModel by activityViewModels<ToolbarViewModel>()
+        val toolbarViewModel by activityViewModel<ToolbarViewModel>()
 
         toolbarViewModel.title.onEach { title ->
             binding.toolbarTitle.text = title

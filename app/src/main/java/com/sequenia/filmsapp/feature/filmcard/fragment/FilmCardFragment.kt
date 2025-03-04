@@ -6,12 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.sequenia.filmsapp.R
 import com.sequenia.filmsapp.databinding.FragmentFilmCardBinding
 import com.sequenia.filmsapp.feature.toolbar.viewmodel.ToolbarViewModel
+import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 class FilmCardFragment : Fragment() {
     companion object {
@@ -23,7 +23,7 @@ class FilmCardFragment : Fragment() {
         const val ARG_DESCRIPTION = "ARG_DESCRIPTION"
     }
 
-    private val toolbarViewModel by activityViewModels<ToolbarViewModel>()
+    private val toolbarViewModel by activityViewModel<ToolbarViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
