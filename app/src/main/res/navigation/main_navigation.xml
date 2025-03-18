@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/filmsFragment"
-        android:name="com.sequenia.filmsapp.feature.films.fragment.FilmsFragment"
+        android:name="com.ansssiaz.filmsapp.feature.films.fragment.FilmsFragment"
         android:label="FilmsFragment"
         tools:layout="@layout/fragment_films">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/filmCardFragment"
-        android:name="com.sequenia.filmsapp.feature.filmcard.fragment.FilmCardFragment"
+        android:name="com.ansssiaz.filmsapp.feature.filmcard.fragment.FilmCardFragment"
         android:label="FilmCardFragment"
         tools:layout="@layout/fragment_film_card"/>
 </navigation>

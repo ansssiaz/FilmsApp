@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.sequenia.filmsapp"
+    namespace = "com.ansssiaz.filmsapp"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.sequenia.filmsapp"
+        applicationId = "com.ansssiaz.filmsapp"
         minSdk = 26
         targetSdk = 35
         versionCode = 1
